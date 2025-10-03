@@ -1,5 +1,5 @@
 {
-  "outputDirectory": ".next",
+  "outputDirectory": "build",
     "headers": [
       {
         "source": "/api/(.*)",
