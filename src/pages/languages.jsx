@@ -69,7 +69,7 @@ const LanguagesPage = ({ repos }) => {
                         </p>
                         <div className={styles.cta}>
                           <a
-                            href={`https://github.com/Elnur21/${repo.name}`}
+                            href={`https://github.com/BahramMuzaffarli/${repo.name}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className={styles.underline}

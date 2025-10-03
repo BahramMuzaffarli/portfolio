@@ -13,7 +13,7 @@ const Bottombar = () => {
     <footer className={styles.bottomBar}>
       <div className={styles.container}>
         <Link
-          href="https://github.com/Elnur21/Elnur21.github.io"
+          href="https://github.com/BahramMuzaffarli/BahramMuzaffarli.github.io"
           target="_blank"
           rel="noreferrer noopener"
           className={styles.section}
@@ -40,7 +40,7 @@ const Bottombar = () => {
             <p>Linkedin</p>
           </div>
         </Link>
-        <Link href="https://github.com/Elnur21" target="_blank" rel="noopener">
+        <Link href="https://github.com/BahramMuzaffarli" target="_blank" rel="noopener">
           <div className={styles.section}>
             <GithubIcon className={styles.icon} />
             <p>Github</p>

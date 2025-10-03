@@ -13,13 +13,13 @@ const contactItems = [
   },
   {
     social: "GitHub",
-    link: "github.com/Elnur21",
-    href: "https://github.com/Elnur21",
+    link: "github.com/BahramMuzaffarli",
+    href: "https://github.com/BahramMuzaffarli",
   },
   {
     social: "Website",
     link: "Portfolio",
-    href: "https://elnur21-github-io.vercel.app/",
+    href: "https://BahramMuzaffarli-github-io.vercel.app/",
   },
 ];
 

@@ -12,7 +12,7 @@ const GithubPage = ({ repos, user }) => {
   return (
     <>
       <a
-        href="https://github.com/Elnur21"
+        href="https://github.com/BahramMuzaffarli"
         target="_blank"
         rel="noopener"
         className={styles.no_color}

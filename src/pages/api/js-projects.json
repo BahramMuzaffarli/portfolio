@@ -5,7 +5,7 @@
     "image": "/smart-edu.png",
     "description": "Nodejs MVC.",
     "tags": ["JavaScript", "Nodejs", "MVC", "Express", "MongoDB"],
-    "source_code": "https://github.com/Elnur21/smart-edu"
+    "source_code": "https://github.com/BahramMuzaffarli/smart-edu"
   },
   {
     "id": 2,
@@ -13,6 +13,6 @@
     "image": "/coza-store.png",
     "description": "MERN stack.",
     "tags": ["JavaScript", "Nodejs", "React", "Express", "MongoDB"],
-    "source_code": "https://github.com/Elnur21/coza-store"
+    "source_code": "https://github.com/BahramMuzaffarli/coza-store"
   }
 ]
