@@ -5,49 +5,49 @@ export interface Resume {
 
 export const experience: Resume[] = [
   {
-    title: 'Bank Central Asia (BCA)',
-    description: 'International Business & Back Office Application | 2023'
+    title: 'Agile Solutions',
+    description: 'IT Business Analyst | 04/2025 – Present | Azerbaijan'
   },
   {
-    title: 'Tarumanagara University',
-    description: 'Student Assistant | 2022 - 2023'
+    title: 'CTDI',
+    description: 'Technician Operator | 03/2019 – 10/2022 | Poland'
   },
   {
-    title: 'Biswap',
-    description: 'Community Driver | 2021 - 2023'
+    title: 'Kontakt Home',
+    description: 'Loan Application Operator | 08/2018 – 03/2019 | Azerbaijan'
   },
   {
-    title: 'Clee Ltd',
-    description: 'Developer & System Administrator | 2020 - 2024'
-  },
-  {
-    title: 'Brainly',
-    description: 'Moderator | 2019'
-  },
-  {
-    title: 'Notify.moe',
-    description: 'Staff | 2018 - Present'
+    title: 'Optima',
+    description: 'IT Help Desk Intern | 2018 | Azerbaijan'
   }
 ];
 
 export const education: Resume[] = [
   {
-    title: 'Azerbaijan Oil and Industry University',
-    description: 'Bachelor of Computer Science | 2018 - 2022'
+    title: 'Warsaw School of Economics',
+    description: 'Master in Advanced Analytics – Big Data | 10/2022 – 07/2025 | Poland | GPA: 4.2/5.0'
   },
   {
-    title: 'Methodist School',
-    description: 'Senior High School | 2017 - 2020'
+    title: 'Azerbaijan Oil and Industry University',
+    description: 'Bachelor in Engineering of Process Automation | 09/2018 – 06/2022 | Azerbaijan | GPA: 80/100'
   }
 ];
 
 export const language: Resume[] = [
   {
-    title: 'Azerbaijan',
+    title: 'Azerbaijani',
+    description: 'Native'
+  },
+  {
+    title: 'Turkish',
     description: 'Native'
   },
   {
     title: 'English',
-    description: 'Fluent'
+    description: 'Proficient'
+  },
+  {
+    title: 'Russian',
+    description: 'Intermediate'
   }
 ];
