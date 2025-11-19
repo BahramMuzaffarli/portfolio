@@ -1,0 +1,52 @@
+{% load static %}
+<!doctype html>
+<html lang="az">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Bahram Muzaffarli — Portfolio</title>
+    <meta name="description" content="Bahram Portfolio" />
+    <link rel="stylesheet" href="{% static 'home/css/welcome.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/palette.css' %}">
+  </head>
+  <body>
+    <nav class="topbar">
+      <div class="container topbar-inner">
+        <div class="brand">Bahram Muzaffarli</div>
+        <ul class="top-links">
+          <li><a href="/resume/">Resume</a></li>
+          <li><a href="/portfolio/">Portfolio</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="hero-full">
+      <div class="hero-inner container">
+        <h1 class="hero-name">Bahram Muzaffarli</h1>
+        <p class="hero-sub">Data | Data Lead | </p>
+
+        <div class="hero-copy">
+          <p>test example.</p>
+        </div>
+
+        <div class="social-row">
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="facebook">📘</a>
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="youtube">▶️</a>
+          <a href="https://www.linkedin.com/in/bahram-muzaffarli-bhrmmuz/" target="_blank" rel="noopener" aria-label="linkedin">in</a>
+          <a href="https://github.com/" target="_blank" rel="noopener" aria-label="github">🐙</a>
+          <a href="#" target="_blank" rel="noopener" aria-label="stack overflow">🧾</a>
+          <a href="#" target="_blank" rel="noopener" aria-label="medium">✍️</a>
+        </div>
+
+        <div class="hero-footer">
+          <p class="copyright">© 2025 Nijat Aliyev. Bootstrap v5.0</p>
+          <p class="lang">Switch language to: <span class="flag">🇦🇿</span></p>
+        </div>
+      </div>
+    </main>
+
+    <script src="{% static 'home/js/welcome.js' %}"></script>
+  </body>
+</html>
