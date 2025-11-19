@@ -2,6 +2,61 @@
 <!doctype html>
 <html lang="az">
   <head>
+  </head><style>
+/* Navbar */
+.topbar {
+    display: flex;
+    justify-content: space-between; /* solda brand, sağda links */
+    align-items: center; /* bütün elementləri vertikal ortala */
+    height: 50px;
+    padding: 0 20px;
+    font-size: 14px;
+    background-color: #fff; /* istəyə görə rəng ver */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* istəyə görə kölgə */
+}
+
+/* Brand solda */
+.topbar .brand {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Links sağa düz */
+.topbar .top-links {
+    display: flex;
+    gap: 20px; /* linklər arası məsafə */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.topbar .top-links li a {
+    font-size: 14px;
+    text-decoration: none;
+    color: #fff;
+    padding: 6px 8px;
+}
+
+/* Hover effekti */
+.topbar .top-links li a:hover {
+    color: #0077ff; /* istəyə görə rəng */
+}
+
+/* Mobil üçün */
+@media (max-width: 768px) {
+    .topbar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 20px;
+    }
+    .topbar .top-links {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+}
+</style>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Bahram Muzaffarli — Portfolio</title>
@@ -25,10 +80,10 @@
     <main class="hero-full">
       <div class="hero-inner container">
         <h1 class="hero-name">Bahram Muzaffarli</h1>
-        <p class="hero-sub">Data | Data Lead | </p>
+        <p class="hero-sub">Data Analyst| Data Scientist | </p>
 
         <div class="hero-copy">
-          <p>test example.</p>
+          <p>IT Business Analyst with a Master’s degree in Advanced Analytics – Big Data and strong hands-on experience in data analytics across academic and professional projects. Experienced in data extraction, visualization, and statistical analysis using Python, SQL, and R. Background in academic and professional data projects in Poland with a strong understanding of data-driven decision-making. Passionate about uncovering insights and improving business outcomes through analytical and evidence-based approaches.</p>
         </div>
 
         <div class="social-row">
