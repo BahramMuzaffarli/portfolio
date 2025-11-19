@@ -6,12 +6,33 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Portfolio — Bahram</title>
     <link rel="stylesheet" href="{% static 'home/css/welcome.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/palette.css' %}">
+    <style>
+      .projects-intro{padding:36px 0 8px;text-align:center}
+      .gh-profile{margin-top:8px;color:var(--bg-light)}
+      .repos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+      .repo{background:rgba(0,0,0,0.12);padding:14px;border-radius:10px}
+      .repo h3{margin:0 0 6px;font-size:16px}
+      .repo p{margin:0;color:var(--muted);font-size:14px}
+      .repo-meta{margin-top:10px;display:flex;gap:12px;color:var(--bg-light);font-size:13px}
+      @media (max-width:980px){.repos-grid{grid-template-columns:repeat(2,1fr)}}
+      @media (max-width:640px){.repos-grid{grid-template-columns:1fr}}
+    </style>
   </head>
   <body>
-    <div class="container" style="padding-top:48px;text-align:center;color:#fff">
-      <h1>Portfolio</h1>
-      <p style="color:rgba(255,255,255,0.8)">Placeholder portfolio page. Add project entries or link to case studies here.</p>
-      <p><a href="/" style="color:var(--muted)">← Back to home</a></p>
+    <div class="container" style="padding-top:28px;color:var(--accent);">
+      <div class="projects-intro">
+        <h1>Projects</h1>
+        <p class="gh-profile">Live projects from <a href="https://github.com/BahramMuzaffarli" target="_blank" rel="noopener">github.com/BahramMuzaffarli</a></p>
+      </div>
+
+      <div id="repos" class="repos-grid" aria-live="polite">
+        <!-- repo cards will be injected here by JS -->
+      </div>
+
+      <p style="text-align:center;margin-top:20px"><a href="/" style="color:var(--bg-light)">← Back to home</a></p>
     </div>
+
+    <script src="{% static 'home/js/portfolio.js' %}"></script>
   </body>
 </html>
