@@ -1,17 +1,33 @@
+{% extends 'home/base.html' %}
 {% load static %}
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+{% block extra_head %}
     <title>Blog — Bahram</title>
-    <link rel="stylesheet" href="{% static 'home/css/welcome.css' %}">
-  </head>
-  <body>
-    <div class="container" style="padding-top:48px;text-align:center;color:#fff">
-      <h1>Blog</h1>
-      <p style="color:rgba(255,255,255,0.8)">Blog placeholder — you can add posts or link to a CMS here.</p>
-      <p><a href="/" style="color:var(--muted)">← Back to home</a></p>
-    </div>
-  </body>
-</html>
+    <!-- If you want to use Inter font, uncomment the line below and ensure it's imported -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet"> -->
+{% endblock %}
+
+{% block content %}
+    <main class="blog-section">
+      <div class="container">
+        <header>
+          <h1 class="blog-title">My Blog</h1>
+          <p class="blog-subtitle">Thoughts, insights, and updates.</p>
+        </header>
+
+        <div class="blog-post-card">
+          <h3>First Blog Post Title</h3>
+          <p>This is the content of my first blog post. It will cover topics related to data analytics, data science, or IT business analysis. I will share my experiences, tutorials, and insights here.</p>
+          <div class="post-meta">Published: November 20, 2025</div>
+        </div>
+
+        <div class="blog-post-card">
+          <h3>Second Blog Post Title</h3>
+          <p>Another blog post where I discuss a specific project or a technical challenge I overcame. The aim is to provide valuable information to readers interested in my field.</p>
+          <div class="post-meta">Published: October 15, 2025</div>
+        </div>
+
+        <p style="text-align: center; margin-top: 40px;"><a href="{% url 'home:home' %}" class="btn btn-secondary">← Back to home</a></p>
+      </div>
+    </main>
+{% endblock %}

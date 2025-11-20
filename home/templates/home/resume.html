@@ -1,118 +1,105 @@
+{% extends 'home/base.html' %}
 {% load static %}
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+{% block extra_head %}
     <title>Resume — Bahram Muzaffarli</title>
-    <link rel="stylesheet" href="{% static 'home/css/welcome.css' %}">
-    <link rel="stylesheet" href="{% static 'home/css/palette.css' %}">
-    <style>
-      .resume-header{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center}
-      .resume-title{font-size:28px;font-weight:700;margin:0}
-      .resume-sub{color:var(--bg-light);margin:0}
-      .contact-line{color:var(--muted);margin-top:6px}
-      .section{margin-top:28px}
-      .section h2{font-size:18px;margin:0 0 10px}
-      .job{margin-bottom:12px}
-      .meta{color:var(--bg-light);font-size:13px}
-      ul.bullets{margin:8px 0 0 18px}
-      .back-link{margin-top:18px;display:inline-block;color:var(--bg-light)}
-    </style>
-  </head>
-  <body>
-    <div class="container" style="padding:48px 24px;color:var(--accent);">
-      <header class="resume-header">
-        <div class="resume-title">Bahram Muzaffarli</div>
-        <div class="resume-sub">Data Analyst / IT Business Analyst</div>
-        <div class="contact-line">
-          <a href="mailto:muzefferlibehram@gmail.com" style="color:var(--bg-light)">muzefferlibehram@gmail.com</a> ·
-          <a href="tel:+994515845868" style="color:var(--bg-light)">+994 51 584 58 68</a> ·
-          Baku, Azerbaijan ·
-          <a href="https://www.linkedin.com/in/bahram-muzaffarli-bhrmmuz/" style="color:var(--bg-light)" target="_blank" rel="noopener">LinkedIn</a>
-          &nbsp;·&nbsp; <a href="#" style="color:var(--bg-light)">Github</a>
-        </div>
-      </header>
+    <!-- If you want to use Inter font, uncomment the line below and ensure it's imported -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet"> -->
+{% endblock %}
 
-      <section class="section">
-        <h2>Summary</h2>
-        <p style="color:var(--muted);line-height:1.6">IT Business Analyst with a Master’s degree in Advanced Analytics – Big Data and strong hands-on experience in data analytics across academic and professional projects. Experienced in data extraction, visualization, and statistical analysis using Python, SQL, and R. Background in academic and professional data projects in Poland with a strong understanding of data-driven decision-making. Passionate about uncovering insights and improving business outcomes through analytical and evidence-based approaches.</p>
-      </section>
+{% block content %}
+    <main class="resume-section">
+      <div class="container">
+        <header class="resume-header">
+          <h1 class="resume-title">Bahram Muzaffarli</h1>
+          <p class="resume-sub">Data Analyst / IT Business Analyst</p>
+          <div class="contact-info">
+            <span><a href="mailto:muzefferlibehram@gmail.com">muzefferlibehram@gmail.com</a></span>
+            <span><a href="tel:+994515845868">+994 51 584 58 68</a></span>
+            <span>Baku, Azerbaijan</span>
+            <span><a href="https://www.linkedin.com/in/bahram-muzaffarli-bhrmmuz/" target="_blank" rel="noopener">LinkedIn</a></span>
+            <span><a href="https://github.com/" target="_blank" rel="noopener">Github</a></span>
+          </div>
+        </header>
 
-      <section class="section">
-        <h2>Work experience</h2>
+        <section class="section-content">
+          <h2 class="section-heading">Summary</h2>
+          <p>IT Business Analyst with a Master’s degree in Advanced Analytics – Big Data and strong hands-on experience in data analytics across academic and professional projects. Experienced in data extraction, visualization, and statistical analysis using Python, SQL, and R. Background in academic and professional data projects in Poland with a strong understanding of data-driven decision-making. Passionate about uncovering insights and improving business outcomes through analytical and evidence-based approaches.</p>
+        </section>
 
-        <div class="job">
-          <div style="font-weight:600">IT Business Analyst — Agile Solutions, Baku, Azerbaijan</div>
-          <div class="meta">21.04.2025 - Present</div>
-          <ul class="bullets">
-            <li>Work with CRM, Contact Center, and cloud-based dialer systems used by local and enterprise-level clients.</li>
-            <li>Analysing system performance, gathering business requirements, and ensuring effective use of the OmniCloud platform to optimize customer communication and operational efficiency.</li>
-            <li>Collaborate with development teams to optimize call flow, IVR, and telephony integrations using data-driven insights.</li>
+        <section class="section-content">
+          <h2 class="section-heading">Work experience</h2>
+          <div class="job-entry">
+            <div class="job-title">IT Business Analyst — Agile Solutions, Baku, Azerbaijan</div>
+            <div class="job-meta">21.04.2025 - Present</div>
+            <ul class="job-description">
+              <li>Work with CRM, Contact Center, and cloud-based dialer systems used by local and enterprise-level clients.</li>
+              <li>Analysing system performance, gathering business requirements, and ensuring effective use of the OmniCloud platform to optimize customer communication and operational efficiency.</li>
+              <li>Collaborate with development teams to optimize call flow, IVR, and telephony integrations using data-driven insights.</li>
+            </ul>
+          </div>
+
+          <div class="job-entry">
+            <div class="job-title">Junior Data Analyst — CTDI, Warsaw, Poland</div>
+            <div class="job-meta">25.11.2024 - 03.01.2025</div>
+            <ul class="job-description">
+              <li>Collected, cleaned, and validated large datasets from multiple sources to ensure data integrity and readiness for analysis.</li>
+              <li>Utilized SQL and Python to perform exploratory data analysis, identify trends, and generate actionable insights.</li>
+              <li>Designed and maintained dashboards and visualizations using tools like Excel and Power BI to support decision-making processes.</li>
+            </ul>
+          </div>
+
+          <div class="job-entry">
+            <div class="job-title">Loan Applications Administrator — Kontakt Home, Baku, Azerbaijan</div>
+            <div class="job-meta">11.03.2019 – 21.10.2022</div>
+            <ul class="job-description">
+              <li>Analysed customer employment data and credit histories, delivering clear, data-driven reports to creditors for decision-making.</li>
+              <li>Developed and managed product entries within the database, ensuring high accuracy and easy retrieval of information.</li>
+            </ul>
+          </div>
+
+          <div class="job-entry">
+            <div class="job-title">IT Help Desk Intern — Optima, Baku, Azerbaijan</div>
+            <div class="job-meta">15.08.2018 – 11.03.2019</div>
+            <ul class="job-description">
+              <li>Conducted installations and made necessary adjustments to hardware, software, and peripherals to ensure smooth operation.</li>
+              <li>Set up user accounts, managed password resets, and managed server access configurations for enhanced system security.</li>
+              <li>Provided technical support to end users by diagnosing and resolving hardware, software, and network issues.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section-content">
+          <h2 class="section-heading">Education</h2>
+          <div class="job-entry">
+            <div class="job-title">Master’s in Big Data – Advanced Analytics — Warsaw School of Economics, Poland</div>
+            <div class="job-meta">2022 - 2025</div>
+          </div>
+          <div class="job-entry">
+            <div class="job-title">Bachelor’s in Automation Engineering — Azerbaijan State Oil and Industry University</div>
+            <div class="job-meta">2018 - 2022</div>
+          </div>
+        </section>
+
+        <section class="section-content">
+          <h2 class="section-heading">Certifications</h2>
+          <ul class="job-description">
+            <li><strong>SAS Certified Big Data Professional Using SAS 9</strong> — SAS & Warsaw School of Economics. Gained advanced knowledge in data manipulation, statistical analysis, and predictive modeling using SAS tools.</li>
+            <li><strong>Introduction to DataFrames.jl</strong> — Julia Academy. Learned data handling, transformation, and analysis techniques using DataFrames.jl.</li>
+            <li><strong>Sabah Groups Program — Azerbaijan Science and Education Ministry. Selected participant in a national academic excellence program.</strong></li>
+            <li><strong>IELTS</strong> — British Council. Completed English language proficiency training.</li>
+            <li><strong>Volunteer</strong> — UEFA & AFFA. Contributed to organizational support and logistics during international football events.</li>
           </ul>
-        </div>
+        </section>
 
-        <div class="job">
-          <div style="font-weight:600">Junior Data Analyst — CTDI, Warsaw, Poland</div>
-          <div class="meta">25.11.2024 - 03.01.2025</div>
-          <ul class="bullets">
-            <li>Collected, cleaned, and validated large datasets from multiple sources to ensure data integrity and readiness for analysis.</li>
-            <li>Utilized SQL and Python to perform exploratory data analysis, identify trends, and generate actionable insights.</li>
-            <li>Designed and maintained dashboards and visualizations using tools like Excel and Power BI to support decision-making processes.</li>
-          </ul>
-        </div>
+        <section class="section-content skills-list">
+          <h2 class="section-heading">Skills</h2>
+          <p><strong>Software & Tools:</strong> Python, R, MS Excel, SQL, Tableau, Power BI, PostgreSQL</p>
+          <p><strong>Soft Skills:</strong> Adaptability, Time Management, Critical Thinking</p>
+          <p><strong>Languages:</strong> Azerbaijani (Native), English (Fluent), Russian (Intermediate)</p>
+        </section>
 
-        <div class="job">
-          <div style="font-weight:600">Loan Applications Administrator — Kontakt Home, Baku, Azerbaijan</div>
-          <div class="meta">11.03.2019 – 21.10.2022</div>
-          <ul class="bullets">
-            <li>Analysed customer employment data and credit histories, delivering clear, data-driven reports to creditors for decision-making.</li>
-            <li>Developed and managed product entries within the database, ensuring high accuracy and easy retrieval of information.</li>
-          </ul>
-        </div>
-
-        <div class="job">
-          <div style="font-weight:600">IT Help Desk Intern — Optima, Baku, Azerbaijan</div>
-          <div class="meta">15.08.2018 – 11.03.2019</div>
-          <ul class="bullets">
-            <li>Conducted installations and made necessary adjustments to hardware, software, and peripherals to ensure smooth operation.</li>
-            <li>Set up user accounts, managed password resets, and managed server access configurations for enhanced system security.</li>
-            <li>Provided technical support to end users by diagnosing and resolving hardware, software, and network issues.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="section">
-        <h2>Education</h2>
-        <div class="job">
-          <div style="font-weight:600">Master’s in Big Data – Advanced Analytics — Warsaw School of Economics, Poland</div>
-          <div class="meta">2022 - 2025</div>
-        </div>
-        <div class="job">
-          <div style="font-weight:600">Bachelor’s in Automation Engineering — Azerbaijan State Oil and Industry University</div>
-          <div class="meta">2018 - 2022</div>
-        </div>
-      </section>
-
-      <section class="section">
-        <h2>Certifications</h2>
-        <ul class="bullets">
-          <li><strong>SAS Certified Big Data Professional Using SAS 9</strong> — SAS & Warsaw School of Economics. Gained advanced knowledge in data manipulation, statistical analysis, and predictive modeling using SAS tools.</li>
-          <li><strong>Introduction to DataFrames.jl</strong> — Julia Academy. Learned data handling, transformation, and analysis techniques using DataFrames.jl.</li>
-          <li><strong>Sabah Groups Program</strong> — Azerbaijan Science and Education Ministry. Selected participant in a national academic excellence program.</li>
-          <li><strong>IELTS</strong> — British Council. Completed English language proficiency training.</li>
-          <li><strong>Volunteer</strong> — UEFA & AFFA. Contributed to organizational support and logistics during international football events.</li>
-        </ul>
-      </section>
-
-      <section class="section">
-        <h2>Skills</h2>
-        <p style="color:var(--muted)"><strong>Software & Tools:</strong> Python, R, MS Excel, SQL, Tableau, Power BI, PostgreSQL</p>
-        <p style="color:var(--muted)"><strong>Soft Skills:</strong> Adaptability, Time Management, Critical Thinking</p>
-        <p style="color:var(--muted)"><strong>Languages:</strong> Azerbaijani (Native), English (Fluent), Russian (Intermediate)</p>
-      </section>
-
-      <p><a class="back-link" href="/">← Back to home</a></p>
-    </div>
-  </body>
-</html>
+        <p style="text-align: center; margin-top: 40px;"><a href="{% url 'home:home' %}" class="btn btn-secondary">← Back to home</a></p>
+      </div>
+    </main>
+{% endblock %}

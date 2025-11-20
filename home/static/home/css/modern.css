@@ -1,0 +1,517 @@
+
+/* General Body and Container Styles (from maxmilkin.com analysis) */
+:root {
+    --bg-dark: #141414; /* Slightly darker for navbar */
+    --content-bg: #1f1f1f; /* Lighter dark grey for main content */
+    --text-light: #e0e0e0; /* Light text */
+    --accent-blue: #8396ff; /* Subtle blue accent */
+    --panel-bg: rgba(255, 255, 255, 0.05); /* For cards/panels */
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Inter', sans-serif; /* Assuming Inter font for modern look */
+    background-color: var(--content-bg); /* Apply lighter background to body */
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); /* Subtle geometric texture */
+    background-repeat: repeat;
+    color: var(--text-light);
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* Consistent horizontal padding */
+}
+
+/* Navbar Styles (from maxmilkin.com analysis) */
+.topbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px; /* Slightly taller for more presence */
+    padding: 0 25px;
+    background-color: rgba(20, 20, 20, 0.95); /* Use --bg-dark with slightly less transparency for navbar */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px); /* Subtle blur effect */
+}
+
+.topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; /* Ensure inner container spans full width */
+}
+
+.topbar .brand {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-light);
+    text-decoration: none; /* Remove underline from brand link */
+}
+
+.topbar .top-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px; /* More spacing between links */
+}
+
+.topbar .top-links li a {
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--text-light);
+    padding: 5px 0;
+    position: relative;
+}
+
+.topbar .top-links li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px; /* Position of the underline */
+    width: 0%;
+    height: 2px;
+    background-color: var(--accent-blue);
+    transition: width 0.3s ease-in-out;
+}
+
+.topbar .top-links li a:hover::after {
+    width: 100%;
+}
+
+/* Basic responsive adjustments for topbar */
+@media (max-width: 768px) {
+    .topbar {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 20px;
+    }
+    .topbar .top-links {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 15px;
+        align-items: center;
+    }
+    .topbar .top-links li a::after {
+        bottom: -1px;
+    }
+}
+
+/* Hero Section Styles */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 60px); /* Full viewport height minus navbar height */
+    text-align: center;
+    padding: 40px 0;
+}
+
+.hero-inner {
+    max-width: 800px;
+}
+
+.hero-name {
+    font-size: 4.5em;
+    font-weight: 700;
+    margin: 0 0 15px;
+    line-height: 1.1;
+    color: var(--text-light);
+}
+
+.hero-sub {
+    font-size: 1.5em;
+    font-weight: 400;
+    color: var(--text-light);
+    margin: 0 0 30px;
+}
+
+.hero-description p {
+    font-size: 1.1em;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* Call to Action Buttons */
+.hero-cta {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--accent-blue);
+    color: var(--bg-dark);
+    border: 2px solid var(--accent-blue);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--accent-blue);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--accent-blue);
+    border: 2px solid var(--accent-blue);
+}
+
+.btn-secondary:hover {
+    background-color: var(--accent-blue);
+    color: var(--bg-dark);
+}
+
+/* Social Links */
+.social-links {
+    margin-top: 40px;
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+}
+
+.social-links a {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.1em;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent-blue);
+}
+
+/* Responsive adjustments for hero section */
+@media (max-width: 768px) {
+    .hero-name {
+        font-size: 3em;
+    }
+    .hero-sub {
+        font-size: 1.2em;
+    }
+    .hero-description p {
+        font-size: 1em;
+        margin-bottom: 30px;
+    }
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+    .btn {
+        width: 80%;
+    }
+}
+
+/* Resume Specific Styles */
+.resume-section {
+    padding: 60px 0;
+}
+.resume-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.resume-title {
+    font-size: 3em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text-light);
+}
+.resume-sub {
+    font-size: 1.2em;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 20px;
+}
+.contact-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9em;
+}
+.contact-info a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+}
+.contact-info a:hover {
+    color: var(--accent-blue);
+}
+.section-heading {
+    font-size: 2em;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: var(--text-light);
+    text-align: center;
+}
+.section-content {
+    background-color: var(--panel-bg); /* Use panel background for content blocks */
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+.job-entry {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.job-entry:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.job-title {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 5px;
+}
+.job-meta {
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 15px;
+}
+.job-description li {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+.skills-list p {
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.8);
+}
+.skills-list strong {
+    color: var(--text-light);
+}
+/* Responsive for resume */
+@media (max-width: 768px) {
+    .resume-title {
+        font-size: 2.2em;
+    }
+    .resume-sub {
+        font-size: 1em;
+    }
+    .section-heading {
+        font-size: 1.5em;
+    }
+    .section-content {
+        padding: 20px;
+    }
+}
+
+/* Portfolio Specific Styles */
+.portfolio-section {
+    padding: 60px 0;
+}
+.portfolio-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.portfolio-title {
+    font-size: 3em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text-light);
+}
+.portfolio-subtitle {
+    font-size: 1.2em;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 20px;
+}
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+.project-card {
+    background-color: var(--panel-bg);
+    padding: 25px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block; /* Ensure the whole card is clickable */
+}
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.project-card h3 {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text-light);
+}
+.project-card p {
+    font-size: 0.95em;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+}
+.project-meta {
+    margin-top: 15px;
+    font-size: 0.85em;
+    color: rgba(255, 255, 255, 0.4);
+}
+/* Responsive for portfolio */
+@media (max-width: 768px) {
+    .portfolio-title {
+        font-size: 2.2em;
+    }
+    .portfolio-subtitle {
+        font-size: 1em;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Blog Specific Styles */
+.blog-section {
+    padding: 60px 0;
+    text-align: center;
+}
+.blog-title {
+    font-size: 3em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-light);
+}
+.blog-subtitle {
+    font-size: 1.2em;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 40px;
+}
+.blog-post-card {
+    background-color: var(--panel-bg);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    text-align: left;
+}
+.blog-post-card h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: var(--text-light);
+}
+.blog-post-card p {
+    font-size: 1em;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+}
+.blog-post-card .post-meta {
+    font-size: 0.85em;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 20px;
+}
+/* Responsive for blog */
+@media (max-width: 768px) {
+    .blog-title {
+        font-size: 2.2em;
+    }
+    .blog-subtitle {
+        font-size: 1em;
+    }
+    .blog-post-card {
+        padding: 20px;
+    }
+    .blog-post-card h3 {
+        font-size: 1.5em;
+    }
+}
+
+/* Contact Specific Styles */
+.contact-section {
+    padding: 60px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 60px); /* Full viewport height minus navbar height */
+    text-align: center;
+}
+.contact-card {
+    background-color: var(--panel-bg);
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.contact-title {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--text-light);
+}
+.contact-subtitle {
+    font-size: 1.1em;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 40px;
+}
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.contact-list li {
+    margin-bottom: 20px;
+}
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center items for a cleaner look */
+    gap: 15px;
+}
+.contact-icon {
+    color: var(--accent-blue);
+    font-size: 1.5em;
+}
+.contact-text a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1em;
+}
+.contact-text a:hover {
+    color: var(--accent-blue);
+}
+.contact-label {
+    font-size: 0.85em;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 5px;
+}
+/* Responsive for contact */
+@media (max-width: 768px) {
+    .contact-title {
+        font-size: 2em;
+    }
+    .contact-subtitle {
+        font-size: 1em;
+    }
+    .contact-card {
+        padding: 30px;
+    }
+}

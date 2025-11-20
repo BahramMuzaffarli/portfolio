@@ -1,111 +1,35 @@
+{% extends 'home/base.html' %}
 {% load static %}
-<!doctype html>
-<html lang="az">
-  <head>
-  </head><style>
-/* Navbar */
-.topbar {
-    display: flex;
-    justify-content: space-between; /* solda brand, sağda links */
-    align-items: center; /* bütün elementləri vertikal ortala */
-    height: 50px;
-    padding: 0 20px;
-    font-size: 14px;
-    background-color: #fff; /* istəyə görə rəng ver */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* istəyə görə kölgə */
-}
 
-/* Brand solda */
-.topbar .brand {
-    font-size: 16px;
-    font-weight: bold;
-}
+{% block extra_head %}
+    <!-- If you want to use Inter font, uncomment the line below and ensure it's imported -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet"> -->
+{% endblock %}
 
-/* Links sağa düz */
-.topbar .top-links {
-    display: flex;
-    gap: 20px; /* linklər arası məsafə */
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.topbar .top-links li a {
-    font-size: 14px;
-    text-decoration: none;
-    color: #fff;
-    padding: 6px 8px;
-}
-
-/* Hover effekti */
-.topbar .top-links li a:hover {
-    color: #0077ff; /* istəyə görə rəng */
-}
-
-/* Mobil üçün */
-@media (max-width: 768px) {
-    .topbar {
-        flex-direction: column;
-        height: auto;
-        padding: 10px 20px;
-    }
-    .topbar .top-links {
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 10px;
-    }
-}
-</style>
-
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Bahram Muzaffarli — Portfolio</title>
-    <meta name="description" content="Bahram Portfolio" />
-    <link rel="stylesheet" href="{% static 'home/css/welcome.css' %}">
-    <link rel="stylesheet" href="{% static 'home/css/palette.css' %}">
-  </head>
-  <body>
-    <nav class="topbar">
-      <div class="container topbar-inner">
-        <div class="brand">Bahram Muzaffarli</div>
-        <ul class="top-links">
-          <li><a href="/resume/">Resume</a></li>
-          <li><a href="/portfolio/">Portfolio</a></li>
-          <li><a href="/blog/">Blog</a></li>
-          <li><a href="/contact/">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <main class="hero-full">
-      <div class="hero-inner container">
+{% block content %}
+    <main class="hero-section">
+      <div class="container hero-inner">
         <h1 class="hero-name">Bahram Muzaffarli</h1>
-        <p class="hero-sub">Data Analyst| Data Scientist | </p>
+        <p class="hero-sub">Data Analyst | Data Scientist | IT Business Analyst</p>
 
-        <div class="hero-copy">
-          <p>IT Business Analyst with a Master’s degree in Advanced Analytics – Big Data and strong hands-on experience in data analytics across academic and professional projects. Experienced in data extraction, visualization, and statistical analysis using Python, SQL, and R. Background in academic and professional data projects in Poland with a strong understanding of data-driven decision-making. Passionate about uncovering insights and improving business outcomes through analytical and evidence-based approaches.</p>
+        <div class="hero-description">
+          <p>Passionate about uncovering insights and improving business outcomes through analytical and evidence-based approaches. Experienced in data extraction, visualization, and statistical analysis using Python, SQL, and R.</p>
         </div>
 
-        <div class="social-row">
-          <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="facebook">📘</a>
-          <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="youtube">▶️</a>
-          <a href="https://www.linkedin.com/in/bahram-muzaffarli-bhrmmuz/" target="_blank" rel="noopener" aria-label="linkedin">in</a>
-          <a href="https://github.com/" target="_blank" rel="noopener" aria-label="github">🐙</a>
-          <a href="#" target="_blank" rel="noopener" aria-label="stack overflow">🧾</a>
-          <a href="#" target="_blank" rel="noopener" aria-label="medium">✍️</a>
+        <div class="hero-cta">
+            <a href="{% url 'home:contact' %}" class="btn btn-primary">Get in Touch</a>
+            <a href="{% url 'home:resume' %}" class="btn btn-secondary">View Resume</a>
         </div>
 
-        <div class="hero-footer">
-          <p class="lang">Switch language to:</p>
-          <div class="lang-buttons" style="margin-top:8px;display:flex;gap:8px;justify-content:center">
-            <button class="lang-btn" data-lang="az">AZ</button>
-            <button class="lang-btn" data-lang="en">ENG</button>
-            <button class="lang-btn" data-lang="ru">RU</button>
-          </div>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/bahram-muzaffarli-bhrmmuz/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+          <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+          <!-- Add other social links as needed -->
         </div>
       </div>
     </main>
+{% endblock %}
 
+{% block extra_js %}
     <script src="{% static 'home/js/welcome.js' %}"></script>
-  </body>
-</html>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% load static %}
+<!doctype html>
+<html lang="az">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Bahram Muzaffarli — Portfolio</title>
+    <meta name="description" content="Bahram Portfolio" />
+    <link rel="icon" type="image/x-icon" href="{% static 'home/images/laptop.ico' %}">
+    <link rel="stylesheet" href="{% static 'home/css/modern.css' %}">
+    {% block extra_head %}{% endblock %}
+  </head>
+  <body>
+    <nav class="topbar">
+      <div class="container topbar-inner">
+        <div class="brand"><a href="{% url 'home:home' %}" style="text-decoration: none; color: inherit;">Bahram Muzaffarli</a></div>
+        <ul class="top-links">
+          <li><a href="{% url 'home:resume' %}">Resume</a></li>
+          <li><a href="{% url 'home:portfolio' %}">Portfolio</a></li>
+          <li><a href="{% url 'home:blog' %}">Blog</a></li>
+          <li><a href="{% url 'home:contact' %}">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+
+    {% block extra_js %}{% endblock %}
+  </body>
+</html>
